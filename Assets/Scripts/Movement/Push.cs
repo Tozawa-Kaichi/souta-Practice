@@ -44,6 +44,7 @@ public class Push : Physics2DObject
 			else
 			{
 				rigidbody2D.AddForce(pushVector);
+
 			}
 		}
 	}
