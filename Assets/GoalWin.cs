@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class GoalWin : MonoBehaviour
 {
-    [SerializeField] GameObject Ui;
+    public GameObject Ui;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Ui = GameObject.Find("Text");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(Ui);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,6 +22,9 @@ public class GoalWin : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Ui.SetActive(true);
+        if(collision.gameObject.tag == "Player")
+        {
+            Ui.SetActive(true);
+        }
     }
 }
